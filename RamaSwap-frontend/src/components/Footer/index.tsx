@@ -70,18 +70,22 @@ export default function Footer() {
       <StyledText>© 2024 Ramestta Blockchain . | All rights reserved</StyledText>
       <ButtonContainer>
         <Button>
-          <a href="https://ramascan.com/">
+          <a href="https://www.ramestta.com/">
             <img src={about} alt="about" />
           </a>
         </Button>
         <Button>
-          <img src={telegram} />
+        <a href="https://t.me/ramestta_blockchain">
+            <img src={telegram} alt="Telegram" />
+          </a>
         </Button>
         <Button>
-          <img src={twitter} />
+        <a href="https://twitter.com/Ramestta">
+            <img src={twitter} alt="Twitter" />
+          </a>
         </Button>
         <Button>
-          <a href="https://discord.gg/EwFs3Pp">
+          <a href="https://discord.com/channels/1080395544385572864/1080395544385572868">
             <img src={discord} alt="Discord" />
           </a>
         </Button>
