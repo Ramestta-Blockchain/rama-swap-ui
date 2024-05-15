@@ -87,7 +87,7 @@ export default function Footer() {
         </Button>
         <Button>
           <a href="https://docs.ramestta.com/">
-            <img src={docs} alt="docs" />
+            <img src={docs} alt="docs " />
           </a>
         </Button>
       </ButtonContainer>
