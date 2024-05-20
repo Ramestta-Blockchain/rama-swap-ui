@@ -36,7 +36,9 @@ const EMPTY_LIST: TokenAddressMap = {
   [ChainId.ROPSTEN]: {},
   [ChainId.GÖRLI]: {},
   [ChainId.MAINNET]: {},
-  [ChainId.MATIC]: {}
+  [ChainId.MATIC]: {},
+  [ChainId.RAMA]: {},
+  [ChainId.TRAMA]: {}
 }
 
 const listCache: WeakMap<TokenList, TokenAddressMap> | null =

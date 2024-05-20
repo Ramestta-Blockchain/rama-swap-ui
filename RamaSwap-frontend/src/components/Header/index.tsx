@@ -45,7 +45,6 @@ const HeaderFrame = styled.div`
 const HeaderElement = styled.div`
   display: flex;
   align-items: center;
-  
 `
 
 const HeaderElementWrap = styled.div`
@@ -138,7 +137,9 @@ const NETWORK_LABELS: { [chainId in ChainId]: string | null } = {
   [ChainId.ROPSTEN]: 'Ropsten',
   [ChainId.GÖRLI]: 'Görli',
   [ChainId.KOVAN]: 'Kovan',
-  [ChainId.MATIC]: 'Matic'
+  [ChainId.MATIC]: 'Matic',
+  [ChainId.RAMA]: 'Ramestta',
+  [ChainId.TRAMA]: 'Pingaksha'
 }
 
 export default function Header() {
@@ -148,9 +149,9 @@ export default function Header() {
   const [isDark] = useDarkModeManager()
 
   return (
-    <HeaderFrame >
+    <HeaderFrame>
       <RowBetween style={{ alignItems: 'flex-start' }} padding="1rem 1rem 0 1rem">
-        <HeaderElement >
+        <HeaderElement>
           <Title href=".">
             <UniIcon>
               <img
@@ -169,7 +170,7 @@ export default function Header() {
               fontSize: '25px',
               marginLeft: '5px',
               fontFamily: 'Georgia, serif',
-              color: isDark ? 'white' : '#8050DF',
+              color: isDark ? '#8050DF' : '#8050DF',
               textDecoration: 'none'
             }}
             to={''}
@@ -185,7 +186,7 @@ export default function Header() {
             <AccountElement active={!!account} style={{ pointerEvents: 'auto' }}>
               {account && userEthBalance ? (
                 <BalanceText style={{ flexShrink: 0 }} pl="0.75rem" pr="0.5rem" fontWeight={500}>
-                  {userEthBalance?.toSignificant(4)} MATIC
+                  {userEthBalance?.toSignificant(4)} RAMA
                 </BalanceText>
               ) : null}
               <Web3Status />
@@ -199,6 +200,5 @@ export default function Header() {
         </HeaderControls>
       </RowBetween>
     </HeaderFrame>
-    
   )
 }
