@@ -8,22 +8,24 @@ import docs from '../../assets/logo/docs.svg'
 import about from '../../assets/logo/about.svg'
 
 const StyledFooter = styled.div`
-  margin-left: 0.5rem;
+  /* margin-left: 0.5rem; */
   width: 100%;
   display: flex;
+  padding:1.5rem;
+  align-items: center;
   justify-content: space-between;
-  padding-inline: 3rem;
+  /* padding-inline: 3rem; */
   border: none;
   text-align: left;
   @media (max-width: 768px) {
     flex-direction: column;
-    align-items: flex-start;
+    
   }
 `
 
 const ButtonContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 25px; /* Add some space between buttons */
 `
 
