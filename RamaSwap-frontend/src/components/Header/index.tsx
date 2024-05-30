@@ -21,6 +21,9 @@ import Settings from '../Settings'
 import Row from '../Row'
 import Web3Status from '../Web3Status'
 import { Link } from 'react-router-dom'
+import { PersonalFont, FontStyles } from '../Styles/globalStyles'
+// import GlobalStyle from '../Styles/globalStyles'
+
 
 // import VersionSwitch from './VersionSwitch'
 
@@ -168,8 +171,8 @@ export default function Header() {
   return (
     <HeaderFrame>
       <Rowbetween
-       
-        // padding="1rem 1rem 0 1rem"
+
+      // padding="1rem 1rem 0 1rem"
       >
         <HeaderElement>
           <Title href=".">
@@ -186,16 +189,17 @@ export default function Header() {
           </Title>
           <Link
             style={{
-              fontWeight: 'bold',
               fontSize: '25px',
               marginLeft: '5px',
-              fontFamily: 'Georgia, serif',
+              fontFamily: 'Personal, sans-serif',
               color: isDark ? '#8050DF' : '#8050DF',
               textDecoration: 'none'
+              // font-family: personal !important;
             }}
             to={''}
           >
-            RamaSwap
+            <FontStyles />
+            <PersonalFont>RamaSwap</PersonalFont>
           </Link>
         </HeaderElement>
         <HeaderControls>
