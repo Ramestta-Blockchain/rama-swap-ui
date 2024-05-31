@@ -192,7 +192,7 @@ export default function Header() {
               fontSize: '25px',
               marginLeft: '5px',
               fontFamily: 'Personal, sans-serif',
-              color: isDark ? '#8050DF' : '#8050DF',
+              color: isDark ? '#00AFEF' : '#00AFEF',
               textDecoration: 'none'
               // font-family: personal !important;
             }}
