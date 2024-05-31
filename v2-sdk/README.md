@@ -1,4 +1,4 @@
-# Uniswap SDK
+# Ramaswap SDK
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Actions Status](https://github.com/Uniswap/uniswap-sdk/workflows/CI/badge.svg)](https://github.com/Uniswap/uniswap-sdk)
@@ -17,10 +17,10 @@ First clone the repository:
 git clone https://github.com/Uniswap/uniswap-sdk.git
 ```
 
-Move into the uniswap-sdk working directory
+Move into the ramaswap-sdk working directory
 
 ```sh
-cd uniswap-sdk/
+cd ramaswap-sdk/
 ```
 
 Install dependencies
