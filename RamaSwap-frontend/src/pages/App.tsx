@@ -38,14 +38,19 @@ const HeaderWrapper = styled.div`
 `
 const StyledVideo = styled.video`
   /* Set video to cover entire container */
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: -1; /* Ensure the video is behind other content */
-`;
+  /* ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  `}; */
+`
 
 const BodyWrapper = styled.div`
   display: flex;
@@ -80,9 +85,9 @@ export default function App() {
             <Header />
           </HeaderWrapper>
           <StyledVideo autoPlay loop muted>
-        <source src="/videos/bg-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </StyledVideo>
+            <source src="/videos/bg-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </StyledVideo>
           <BodyWrapper>
             <Popups />
             <Web3ReactManager>
@@ -106,7 +111,7 @@ export default function App() {
             </Web3ReactManager>
             <Marginer />
           </BodyWrapper>
-          <Footer/>
+          <Footer />
         </AppWrapper>
       </HashRouter>
       {/* <Footer/> */}

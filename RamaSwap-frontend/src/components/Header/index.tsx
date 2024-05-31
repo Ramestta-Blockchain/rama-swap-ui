@@ -18,10 +18,13 @@ import { useETHBalances } from '../../state/wallet/hooks'
 import { YellowCard } from '../Card'
 import Settings from '../Settings'
 
-import Row, { RowBetween } from '../Row'
+import Row from '../Row'
 import Web3Status from '../Web3Status'
 import { Link } from 'react-router-dom'
-// import { Link } from 'react-router-dom'
+import { PersonalFont, FontStyles } from '../Styles/globalStyles'
+// import GlobalStyle from '../Styles/globalStyles'
+
+
 // import VersionSwitch from './VersionSwitch'
 
 const HeaderFrame = styled.div`
@@ -120,7 +123,7 @@ const HeaderControls = styled.div`
   align-items: center;
 
   ${({ theme }) => theme.mediaWidth.upToSmall`
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-end;
   `};
 `
@@ -130,6 +133,23 @@ const BalanceText = styled(Text)`
     display: none;
   `};
 `
+const Rowbetween = styled('div')`
+  align-items: 'flex-start';
+  padding: 1rem 1.5rem;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+    gap: 1rem;
+    justify-content: center;
+  `};
+`
+// const Link = styled(Text)`
+//   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+//     display: none;
+//   `};
+// `
 
 const NETWORK_LABELS: { [chainId in ChainId]: string | null } = {
   [ChainId.MAINNET]: null,
@@ -150,7 +170,10 @@ export default function Header() {
 
   return (
     <HeaderFrame>
-      <RowBetween style={{ alignItems: 'flex-start' }} padding="1rem 1rem 0 1rem">
+      <Rowbetween
+
+      // padding="1rem 1rem 0 1rem"
+      >
         <HeaderElement>
           <Title href=".">
             <UniIcon>
@@ -166,16 +189,17 @@ export default function Header() {
           </Title>
           <Link
             style={{
-              fontWeight: 'bold',
               fontSize: '25px',
               marginLeft: '5px',
-              fontFamily: 'Georgia, serif',
+              fontFamily: 'Personal, sans-serif',
               color: isDark ? '#8050DF' : '#8050DF',
               textDecoration: 'none'
+              // font-family: personal !important;
             }}
             to={''}
           >
-            RamaSwap
+            <FontStyles />
+            <PersonalFont>RamaSwap</PersonalFont>
           </Link>
         </HeaderElement>
         <HeaderControls>
@@ -198,7 +222,7 @@ export default function Header() {
             {/* <Menu /> */}
           </HeaderElementWrap>
         </HeaderControls>
-      </RowBetween>
+      </Rowbetween>
     </HeaderFrame>
   )
 }
