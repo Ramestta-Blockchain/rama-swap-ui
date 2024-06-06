@@ -3,13 +3,13 @@ import { FortmaticConnector as FortmaticConnectorCore } from '@web3-react/fortma
 
 export const OVERLAY_READY = 'OVERLAY_READY'
 
-type FormaticSupportedChains = Extract<ChainId, ChainId.MAINNET | ChainId.ROPSTEN | ChainId.RINKEBY | ChainId.KOVAN>
+type FormaticSupportedChains = Extract<ChainId, ChainId.RAMA >
 
 const CHAIN_ID_NETWORK_ARGUMENT: { readonly [chainId in FormaticSupportedChains]: string | undefined } = {
-  [ChainId.MAINNET]: undefined,
-  [ChainId.ROPSTEN]: 'ropsten',
-  [ChainId.RINKEBY]: 'rinkeby',
-  [ChainId.KOVAN]: 'kovan'
+  [ChainId.RAMA]: undefined
+  // [ChainId.ROPSTEN]: 'ropsten',
+  // [ChainId.RINKEBY]: 'rinkeby',
+  // [ChainId.KOVAN]: 'kovan'
 }
 
 export class FortmaticConnector extends FortmaticConnectorCore {
@@ -32,7 +32,7 @@ export class FortmaticConnector extends FortmaticConnectorCore {
         if (provider.overlayReady) {
           clearInterval(interval)
           this.emit(OVERLAY_READY)
-          resolve()
+          // resolve()
         }
       }, 200)
     })

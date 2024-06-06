@@ -11,26 +11,26 @@ type ChainTokenList = {
 }
 
 // export const DAI = new Token(ChainId.MAINNET, '0x6B175474E89094C44Da98b954EedeAC495271d0F', 18, 'DAI', 'Dai Stablecoin')
-export const USDC = new Token(ChainId.MAINNET, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC', 'USD//C')
+// export const USDC = new Token(ChainId.MAINNET, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC', 'USD//C')
 // export const USDT = new Token(ChainId.MAINNET, '0xdAC17F958D2ee523a2206206994597C13D831ec7', 6, 'USDT', 'Tether USD')
-export const COMP = new Token(ChainId.MAINNET, '0xc00e94Cb662C3520282E6f5717214004A7f26888', 18, 'COMP', 'Compound')
-export const MKR = new Token(ChainId.MAINNET, '0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2', 18, 'MKR', 'Maker')
-export const AMPL = new Token(ChainId.MAINNET, '0xD46bA6D942050d489DBd938a2C909A5d5039A161', 9, 'AMPL', 'Ampleforth')
+// export const COMP = new Token(ChainId.MAINNET, '0xc00e94Cb662C3520282E6f5717214004A7f26888', 18, 'COMP', 'Compound')
+// export const MKR = new Token(ChainId.MAINNET, '0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2', 18, 'MKR', 'Maker')
+// export const AMPL = new Token(ChainId.MAINNET, '0xD46bA6D942050d489DBd938a2C909A5d5039A161', 9, 'AMPL', 'Ampleforth')
 export const DAI = new Token(ChainId.RAMA, '0x83cD7428ea4ebb7Dd2E5464b4B10eb0Df9EcC752', 18, 'DAI','Dai Stablecoin')
 export const USDT = new Token(ChainId.RAMA, '0x84e8F41F5442E6239698b87512081441829ba7ba', 18, 'USDT', 'Tether USD')
-export const RMATIC = new Token(ChainId.RAMA, '0x02f0E898e3B7aF88511B620878C26adC5AAC6A5d', 18, 'RMATIC', 'Wrapped Matic on Ramestta')
+// export const RMATIC = new Token(ChainId.RAMA, '0x02f0E898e3B7aF88511B620878C26adC5AAC6A5d', 18, 'RMATIC', 'Wrapped Matic on Ramestta')
 export const RBTC = new Token(ChainId.RAMA, '0x8D1213abFa53dC4e8CB11eFa4a8DC353EFecfB84', 8, 'RBTC', '(Ramestta PoS) Wrapped BTC ')
 export const RETH = new Token(ChainId.RAMA, '0xbEcF35FbC068532d32A730F2fBA80230B05348E6', 18, 'RETH', '(Ramestta PoS) Wrapped ETH (RETH)')
-export const AAVE = new Token(ChainId.RAMA, '0x30940e7240a8cE60cb4b38ce7fBA7D88e5bCCe46', 18, 'AAVE', '(Ramestta PoS) Aave (AAVE)')
-export const UNI = new Token(ChainId.RAMA, '0x6622C7799aa0Ac3717a3E77b14d65d65C2e73388', 18, 'UNI', '(Ramestta PoS) Uniswap (UNI)')
-export const SHIB = new Token(ChainId.RAMA, '0x63B1f9a2A1104C7DC37ae3686AE2be5aBe4aa798', 18, 'SHIB', '(Ramestta PoS) SHIBA INU (SHIB)')
+// export const AAVE = new Token(ChainId.RAMA, '0x30940e7240a8cE60cb4b38ce7fBA7D88e5bCCe46', 18, 'AAVE', '(Ramestta PoS) Aave (AAVE)')
+// export const UNI = new Token(ChainId.RAMA, '0x6622C7799aa0Ac3717a3E77b14d65d65C2e73388', 18, 'UNI', '(Ramestta PoS) Uniswap (UNI)')
+// export const SHIB = new Token(ChainId.RAMA, '0x63B1f9a2A1104C7DC37ae3686AE2be5aBe4aa798', 18, 'SHIB', '(Ramestta PoS) SHIBA INU (SHIB)')
 const WETH_ONLY: ChainTokenList = {
-  [ChainId.MAINNET]: [WETH[ChainId.MAINNET]],
-  [ChainId.ROPSTEN]: [WETH[ChainId.ROPSTEN]],
-  [ChainId.RINKEBY]: [WETH[ChainId.RINKEBY]],
-  [ChainId.GÖRLI]: [WETH[ChainId.GÖRLI]],
-  [ChainId.KOVAN]: [WETH[ChainId.KOVAN]],
-  [ChainId.MATIC]: [WETH[ChainId.MATIC]],
+  // [ChainId.MAINNET]: [WETH[ChainId.MAINNET]],
+  // [ChainId.ROPSTEN]: [WETH[ChainId.ROPSTEN]],
+  // [ChainId.RINKEBY]: [WETH[ChainId.RINKEBY]],
+  // [ChainId.GÖRLI]: [WETH[ChainId.GÖRLI]],
+  // [ChainId.KOVAN]: [WETH[ChainId.KOVAN]],
+  // [ChainId.MATIC]: [WETH[ChainId.MATIC]],
   [ChainId.RAMA]: [WETH[ChainId.RAMA]],
   [ChainId.TRAMA]: [WETH[ChainId.TRAMA]]
 }
@@ -38,8 +38,8 @@ const WETH_ONLY: ChainTokenList = {
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, COMP, MKR],
-  [ChainId.RAMA]: [...WETH_ONLY[ChainId.RAMA], DAI, USDT, RMATIC, RBTC, RETH, AAVE, UNI, SHIB]
+  // [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, COMP, MKR],
+  [ChainId.RAMA]: [...WETH_ONLY[ChainId.RAMA], DAI, USDT,  RBTC, RETH]
 }
 
 /**
@@ -60,22 +60,23 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 export const SUGGESTED_BASES: ChainTokenList = {
   ...WETH_ONLY,
   // [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT],
-  [ChainId.RAMA]: [...WETH_ONLY[ChainId.RAMA], DAI, USDT, RMATIC, RBTC, RETH, AAVE, UNI, SHIB]
+  [ChainId.RAMA]: [...WETH_ONLY[ChainId.RAMA], DAI, USDT, RBTC, RETH]
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT]
+  // [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT]
+  [ChainId.RAMA]: [...WETH_ONLY[ChainId.RAMA], DAI, USDT]
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
-  [ChainId.MAINNET]: [
-    [
-      new Token(ChainId.MAINNET, '0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643', 8, 'cDAI', 'Compound Dai'),
-      new Token(ChainId.MAINNET, '0x39AA39c021dfbaE8faC545936693aC917d5E7563', 8, 'cUSDC', 'Compound USD Coin')
-    ],
-    [USDC, USDT],
+  [ChainId.RAMA]: [
+    // [
+    //   new Token(ChainId.MAINNET, '0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643', 8, 'cDAI', 'Compound Dai'),
+    //   new Token(ChainId.MAINNET, '0x39AA39c021dfbaE8faC545936693aC917d5E7563', 8, 'cUSDC', 'Compound USD Coin')
+    // ],
+    // [USDC, USDT],
     [DAI, USDT]
   ]
 }

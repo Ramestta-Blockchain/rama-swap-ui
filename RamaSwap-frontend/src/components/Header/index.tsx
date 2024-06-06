@@ -152,12 +152,12 @@ const Rowbetween = styled('div')`
 // `
 
 const NETWORK_LABELS: { [chainId in ChainId]: string | null } = {
-  [ChainId.MAINNET]: null,
-  [ChainId.RINKEBY]: 'Rinkeby',
-  [ChainId.ROPSTEN]: 'Ropsten',
-  [ChainId.GÖRLI]: 'Görli',
-  [ChainId.KOVAN]: 'Kovan',
-  [ChainId.MATIC]: 'Matic',
+  // [ChainId.MAINNET]: null,
+  // [ChainId.RINKEBY]: 'Rinkeby',
+  // [ChainId.ROPSTEN]: 'Ropsten',
+  // [ChainId.GÖRLI]: 'Görli',
+  // [ChainId.KOVAN]: 'Kovan',
+  // [ChainId.MATIC]: 'Matic',
   [ChainId.RAMA]: 'Ramestta',
   [ChainId.TRAMA]: 'Pingaksha'
 }
@@ -192,7 +192,7 @@ export default function Header() {
               fontSize: '25px',
               marginLeft: '5px',
               fontFamily: 'Personal, sans-serif',
-              color: isDark ? '#00AFEF' : '#00AFEF',
+              color: isDark ? 'white' : 'white',
               textDecoration: 'none'
               // font-family: personal !important;
             }}

@@ -132,21 +132,21 @@ const ListRow = memo(function ListRow({ listUrl, onBack }: { listUrl: string; on
     dispatch(acceptListUpdate(listUrl))
   }, [dispatch, listUrl, pending])
 
-  // const handleRemoveList = useCallback(() => {
-  //   ReactGA.event({
-  //     category: 'Lists',
-  //     action: 'Start Remove List',
-  //     label: listUrl
-  //   })
-  //   if (window.prompt(`Please confirm you would like to remove this list by typing REMOVE`) === `REMOVE`) {
-  //     ReactGA.event({
-  //       category: 'Lists',
-  //       action: 'Confirm Remove List',
-  //       label: listUrl
-  //     })
-  //     dispatch(removeList(listUrl))
-  //   }
-  // }, [dispatch, listUrl])
+  const handleRemoveList = useCallback(() => {
+    ReactGA.event({
+      category: 'Lists',
+      action: 'Start Remove List',
+      label: listUrl
+    })
+    if (window.prompt(`Please confirm you would like to remove this list by typing REMOVE`) === `REMOVE`) {
+      ReactGA.event({
+        category: 'Lists',
+        action: 'Confirm Remove List',
+        label: listUrl
+      })
+      dispatch(removeList(listUrl))
+    }
+  }, [dispatch, listUrl])
 
   if (!list) return null
 
@@ -196,10 +196,10 @@ const ListRow = memo(function ListRow({ listUrl, onBack }: { listUrl: string; on
           <PopoverContainer show={true} ref={setPopperElement as any} style={styles.popper} {...attributes.popper}>
             <div>{list && listVersionLabel(list.version)}</div>
             <SeparatorDark />
-            {/* <ExternalLink href={`https://tokenlists.org/token-list?url=${listUrl}`}>View list</ExternalLink>
+            <ExternalLink href={`https://tokenlists.org/token-list?url=${listUrl}`}>View list</ExternalLink>
             <UnpaddedLinkStyledButton onClick={handleRemoveList} disabled={Object.keys(listsByUrl).length === 1}>
               Remove list
-            </UnpaddedLinkStyledButton> */}
+            </UnpaddedLinkStyledButton>
             {pending && (
               <UnpaddedLinkStyledButton onClick={handleAcceptListUpdate}>Update list</UnpaddedLinkStyledButton>
             )}
@@ -372,7 +372,9 @@ export function ListSelect({ onDismiss, onBack }: { onDismiss: () => void; onBac
       <Separator />
 
       <div style={{ padding: '16px', textAlign: 'center' }}>
-        <ExternalLink href="https://ramascan.com/tokens">Ramascan Tokenlist</ExternalLink>
+        <ExternalLink href="https://tokenlists.org/token-list?url=https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/ramestta.tokenlist.json">
+          Ramestta Tokenlist
+        </ExternalLink>
       </div>
     </Column>
   )
