@@ -10,7 +10,7 @@
       "name": "Tether USD",
       "symbol": "USDT",
       "decimals": 6,
-      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-staking-ui/stage/icons/usdt.webp"
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/usdt.webp"
     },
     {
       "chainId": 1370,
@@ -18,7 +18,7 @@
       "name": "Dai Stablecoin",
       "symbol": "DAI",
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-staking-ui/stage/icons/dai.svg"
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/dai.svg"
     },
     {
       "chainId": 1370,
@@ -26,7 +26,7 @@
       "name": "Wrapped BTC",
       "symbol": "RBTC",
       "decimals": 8,
-      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-staking-ui/stage/icons/wbtc.webp"
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/wbtc.webp"
     },
     {
       "chainId": 1370,
@@ -42,7 +42,7 @@
       "name": "SHIBA INU",
       "symbol": "SHIB",
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-staking-ui/stage/icons/shiba.webp"
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/shiba.webp"
     },
     {
       "chainId": 1370,
@@ -50,7 +50,7 @@
       "name": "Aave",
       "symbol": "AAVE",
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-staking-ui/stage/icons/aave.webp"
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/aave.webp"
     },
     {
       "chainId": 1370,
@@ -58,7 +58,7 @@
       "name": "Wrapped ETH",
       "symbol": "RETH",
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-staking-ui/stage/icons/eth.webp"
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/eth.webp"
     },
     {
       "chainId": 1370,
@@ -74,7 +74,7 @@
       "name": "Wrapped Matic",
       "symbol": "RMATIC",
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-staking-ui/stage/icons/polygon.webp"
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/polygon.webp"
     },
     {
       "chainId": 1370,
@@ -82,7 +82,7 @@
       "name": "Mumble Chat",
       "symbol": "MMCT",
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-staking-ui/stage/icons/mmct.svg"
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/mmct.svg"
     }
   ],
   "version": {
