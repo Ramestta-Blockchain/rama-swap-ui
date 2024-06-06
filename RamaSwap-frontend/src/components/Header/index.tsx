@@ -145,19 +145,8 @@ const Rowbetween = styled('div')`
     justify-content: center;
   `};
 `
-// const Link = styled(Text)`
-//   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-//     display: none;
-//   `};
-// `
 
 const NETWORK_LABELS: { [chainId in ChainId]: string } = {
-  // [ChainId.MAINNET]: null,
-  // [ChainId.RINKEBY]: 'Rinkeby',
-  // [ChainId.ROPSTEN]: 'Ropsten',
-  // [ChainId.GÖRLI]: 'Görli',
-  // [ChainId.KOVAN]: 'Kovan',
-  // [ChainId.MATIC]: 'Matic',
   [ChainId.RAMA]: 'Ramestta',
   [ChainId.TRAMA]: 'Pingaksha'
 }
