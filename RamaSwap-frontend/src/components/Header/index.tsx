@@ -151,7 +151,7 @@ const Rowbetween = styled('div')`
 //   `};
 // `
 
-const NETWORK_LABELS: { [chainId in ChainId]: string | null } = {
+const NETWORK_LABELS: { [chainId in ChainId]: string } = {
   // [ChainId.MAINNET]: null,
   // [ChainId.RINKEBY]: 'Rinkeby',
   // [ChainId.ROPSTEN]: 'Ropsten',
