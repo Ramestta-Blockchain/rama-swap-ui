@@ -1,6 +1,6 @@
 {
   "name": "Ramestta",
-  "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/ramascan-testnet/main/public/static/ramestta_32x32_mm_icon.svg",
+  "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/rama.png",
   "keywords": ["ramestta", "layer2", "defi"],
   "timestamp": "2024-06-06T15:22:00.000Z",
   "tokens": [
@@ -66,7 +66,7 @@
       "name": "Wrapped RAMA",
       "symbol": "WRAMA",
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/ramascan-testnet/main/public/static/ramestta_32x32_mm_icon.svg"
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/rama.png"
     },
     {
       "chainId": 1370,
