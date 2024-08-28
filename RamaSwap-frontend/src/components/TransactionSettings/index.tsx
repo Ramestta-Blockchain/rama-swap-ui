@@ -23,9 +23,9 @@ const FancyButton = styled.button`
   align-items: center;
   height: 2rem;
   border-radius: 36px;
-  font-size: 12px;
+  font-size: 1px;
   width: auto;
-  min-width: 3rem;
+  min-width: 3.5rem;
   border: 1px solid ${({ theme }) => theme.bg3};
   outline: none;
   background: ${({ theme }) => theme.bg1};
@@ -211,7 +211,7 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
             style={{
               fontSize: '14px',
               paddingTop: '7px',
-              color: slippageError === SlippageError.InvalidInput ? 'red' : '#F3841E'
+              color: slippageError === SlippageError.InvalidInput ? 'red' : '#06182d'
             }}
           >
             {slippageError === SlippageError.InvalidInput

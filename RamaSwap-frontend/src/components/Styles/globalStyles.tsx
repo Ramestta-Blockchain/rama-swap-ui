@@ -7,6 +7,9 @@ const FontStyles = createGlobalStyle`
     src: url('/default.ttf') format('truetype');
     
   }
+  .fApGYX {
+    font-size: 12px;
+}
 `
 
 // Create a styled component that uses the custom font

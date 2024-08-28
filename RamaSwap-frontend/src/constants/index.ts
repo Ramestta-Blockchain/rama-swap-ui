@@ -5,6 +5,8 @@ import { fortmatic, injected, portis, walletconnect, walletlink } from '../conne
 
 export const ROUTER_ADDRESS = '0xAc27ec1de4E79014a56f8b69aE069DDB0bF9d265'
 
+export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
+
 // a list of tokens by chain
 type ChainTokenList = {
   readonly [chainId in ChainId]: Token[]
@@ -24,6 +26,25 @@ export const RETH = new Token(ChainId.RAMA, '0xbEcF35FbC068532d32A730F2fBA80230B
 // export const AAVE = new Token(ChainId.RAMA, '0x30940e7240a8cE60cb4b38ce7fBA7D88e5bCCe46', 18, 'AAVE', '(Ramestta PoS) Aave (AAVE)')
 // export const UNI = new Token(ChainId.RAMA, '0x6622C7799aa0Ac3717a3E77b14d65d65C2e73388', 18, 'UNI', '(Ramestta PoS) Uniswap (UNI)')
 // export const SHIB = new Token(ChainId.RAMA, '0x63B1f9a2A1104C7DC37ae3686AE2be5aBe4aa798', 18, 'SHIB', '(Ramestta PoS) SHIBA INU (SHIB)')
+
+// TODO this is only approximate, it's actually based on blocks
+export const PROPOSAL_LENGTH_IN_DAYS = 7
+
+export const GOVERNANCE_ADDRESS = '0x5e4be8Bc9637f0EAA1A755019e06A68ce081D58F'
+
+const UNI_ADDRESS = '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984'
+export const UNI: { [chainId in ChainId]: Token } = {
+  [ChainId.RAMA]: new Token(ChainId.RAMA, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  [ChainId.TRAMA]: new Token(ChainId.TRAMA, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  // [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  // [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  // [ChainId.KOVAN]: new Token(ChainId.KOVAN, UNI_ADDRESS, 18, 'UNI', 'Uniswap')
+}
+
+// TODO: specify merkle distributor for mainnet
+export const MERKLE_DISTRIBUTOR_ADDRESS: { [chainId in ChainId]?: string } = {
+  [ChainId.RAMA]: '0x090D4613473dEE047c3f2706764f49E0821D256e'
+}
 const WETH_ONLY: ChainTokenList = {
   // [ChainId.MAINNET]: [WETH[ChainId.MAINNET]],
   // [ChainId.ROPSTEN]: [WETH[ChainId.ROPSTEN]],
@@ -163,6 +184,8 @@ export const NetworkContextName = 'NETWORK'
 export const INITIAL_ALLOWED_SLIPPAGE = 50
 // 20 minutes, denominated in seconds
 export const DEFAULT_DEADLINE_FROM_NOW = 60 * 20
+
+export const BIG_INT_ZERO = JSBI.BigInt(0)
 
 // one basis point
 export const ONE_BIPS = new Percent(JSBI.BigInt(1), JSBI.BigInt(10000))

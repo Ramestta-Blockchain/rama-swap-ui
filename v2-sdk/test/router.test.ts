@@ -10,12 +10,12 @@ function checkDeadline(deadline: string[] | string): void {
 }
 
 describe('Router', () => {
-  const token0 = new Token(ChainId.MAINNET, '0x0000000000000000000000000000000000000001', 18, 't0')
-  const token1 = new Token(ChainId.MAINNET, '0x0000000000000000000000000000000000000002', 18, 't1')
+  const token0 = new Token(ChainId.RAMA, '0x0000000000000000000000000000000000000001', 18, 't0')
+  const token1 = new Token(ChainId.RAMA, '0x0000000000000000000000000000000000000002', 18, 't1')
 
   const pair_0_1 = new Pair(new TokenAmount(token0, JSBI.BigInt(1000)), new TokenAmount(token1, JSBI.BigInt(1000)))
 
-  const pair_weth_0 = new Pair(new TokenAmount(WETH[ChainId.MAINNET], '1000'), new TokenAmount(token0, '1000'))
+  const pair_weth_0 = new Pair(new TokenAmount(WETH[ChainId.RAMA], '1000'), new TokenAmount(token0, '1000'))
 
   describe('#swapCallParameters', () => {
     describe('exact in', () => {
@@ -27,12 +27,32 @@ describe('Router', () => {
         expect(result.methodName).toEqual('swapExactETHForTokens')
         expect(result.args.slice(0, -1)).toEqual([
           '0x51',
-          [WETH[ChainId.MAINNET].address, token0.address, token1.address],
+          [WETH[ChainId.RAMA].address, token0.address, token1.address],
           '0x0000000000000000000000000000000000000004'
         ])
         expect(result.value).toEqual('0x64')
         checkDeadline(result.args[result.args.length - 1])
       })
+
+      it('deadline specified', () => {
+        const result = Router.swapCallParameters(
+          Trade.exactIn(new Route([pair_weth_0, pair_0_1], ETHER, token1), CurrencyAmount.ether(JSBI.BigInt(100))),
+          {
+            deadline: 50,
+            recipient: '0x0000000000000000000000000000000000000004',
+            allowedSlippage: new Percent('1', '100')
+          }
+        )
+        expect(result.methodName).toEqual('swapExactETHForTokens')
+        expect(result.args).toEqual([
+          '0x51',
+          [WETH[ChainId.RAMA].address, token0.address, token1.address],
+          '0x0000000000000000000000000000000000000004',
+          '0x32'
+        ])
+        expect(result.value).toEqual('0x64')
+      })
+
       it('token1 to ether', () => {
         const result = Router.swapCallParameters(
           Trade.exactIn(new Route([pair_0_1, pair_weth_0], token1, ETHER), new TokenAmount(token1, JSBI.BigInt(100))),
@@ -42,7 +62,7 @@ describe('Router', () => {
         expect(result.args.slice(0, -1)).toEqual([
           '0x64',
           '0x51',
-          [token1.address, token0.address, WETH[ChainId.MAINNET].address],
+          [token1.address, token0.address, WETH[ChainId.RAMA].address],
           '0x0000000000000000000000000000000000000004'
         ])
         expect(result.value).toEqual('0x0')
@@ -73,7 +93,7 @@ describe('Router', () => {
         expect(result.methodName).toEqual('swapETHForExactTokens')
         expect(result.args.slice(0, -1)).toEqual([
           '0x64',
-          [WETH[ChainId.MAINNET].address, token0.address, token1.address],
+          [WETH[ChainId.RAMA].address, token0.address, token1.address],
           '0x0000000000000000000000000000000000000004'
         ])
         expect(result.value).toEqual('0x80')
@@ -88,7 +108,7 @@ describe('Router', () => {
         expect(result.args.slice(0, -1)).toEqual([
           '0x64',
           '0x80',
-          [token1.address, token0.address, WETH[ChainId.MAINNET].address],
+          [token1.address, token0.address, WETH[ChainId.RAMA].address],
           '0x0000000000000000000000000000000000000004'
         ])
         expect(result.value).toEqual('0x0')
@@ -125,7 +145,7 @@ describe('Router', () => {
           expect(result.methodName).toEqual('swapExactETHForTokensSupportingFeeOnTransferTokens')
           expect(result.args.slice(0, -1)).toEqual([
             '0x51',
-            [WETH[ChainId.MAINNET].address, token0.address, token1.address],
+            [WETH[ChainId.RAMA].address, token0.address, token1.address],
             '0x0000000000000000000000000000000000000004'
           ])
           expect(result.value).toEqual('0x64')
@@ -145,7 +165,7 @@ describe('Router', () => {
           expect(result.args.slice(0, -1)).toEqual([
             '0x64',
             '0x51',
-            [token1.address, token0.address, WETH[ChainId.MAINNET].address],
+            [token1.address, token0.address, WETH[ChainId.RAMA].address],
             '0x0000000000000000000000000000000000000004'
           ])
           expect(result.value).toEqual('0x0')
