@@ -1,8 +1,8 @@
 name: Release
 on:
   # every morning
-  # schedule:
-  #   - cron:  '0 12 * * 1-4'
+  schedule:
+    - cron: '0 12 * * 1-4'
 
   # manual trigger
   workflow_dispatch:
@@ -101,5 +101,4 @@ jobs:
             - https://cloudflare-ipfs.com/ipfs/${{ steps.upload.outputs.hash }}/
             - https://ipfs.infura.io/ipfs/${{ steps.upload.outputs.hash }}/
             - https://ipfs.io/ipfs/${{ steps.upload.outputs.hash }}/
-
             ${{ needs.bump_version.outputs.changelog }}
