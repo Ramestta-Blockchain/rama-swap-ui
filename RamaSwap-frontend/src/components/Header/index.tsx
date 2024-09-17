@@ -1,10 +1,10 @@
 // import { ChainId } from '@uniswap/sdk'
 // import React from 'react'
 // import { isMobile } from 'react-device-detect'
-import { ChainId, TokenAmount, JSBI } from '@uniswap/sdk'
+import { ChainId, TokenAmount } from '@uniswap/sdk'
 import React, { useState } from 'react'
 import { Text } from 'rebass'
-import { NavLink, withRouter } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { darken } from 'polished'
 import { useTranslation } from 'react-i18next'
 
@@ -270,7 +270,7 @@ const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.TRAMA]: 'Pingaksha'
 }
 
-function Header({ history }: { history: any }) {
+export default function Header() {
   const { account, chainId } = useActiveWeb3React()
   const { t } = useTranslation()
 
@@ -299,7 +299,7 @@ function Header({ history }: { history: any }) {
           <UniBalanceContent setShowUniBalanceModal={setShowUniBalanceModal} />
         </Modal>
         <HeaderRow>
-          <Title href="." style={{}}>
+          <Title href=".">
             <UniIcon>
               <img
                 style={{ width: '40px', height: '40px', marginTop: '2px' }}
@@ -309,36 +309,26 @@ function Header({ history }: { history: any }) {
             </UniIcon>
           </Title>
           <HeaderLinks>
-            <StyledNavLink
-              id={`swap-nav-link`}
-              to={'/swap'}
-              isActive={() => history.location.pathname.includes('/swap')}
-            >
+            <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
               {t('Ramaswap')}
             </StyledNavLink>
             <StyledNavLink
               id={`pool-nav-link`}
               to={'/pool'}
-              isActive={() =>
-                history.location.pathname.includes('/pool') ||
-                history.location.pathname.includes('/add') ||
-                history.location.pathname.includes('/remove')
+              isActive={(match, { pathname }) =>
+                Boolean(match) ||
+                pathname.startsWith('/add') ||
+                pathname.startsWith('/remove') ||
+                pathname.startsWith('/create') ||
+                pathname.startsWith('/find')
               }
             >
               {t('pool')}
             </StyledNavLink>
-            <StyledNavLink
-              id={`stake-nav-link`}
-              to={'/uni'}
-              isActive={() => history.location.pathname.includes('/uni')}
-            >
+            <StyledNavLink id={`stake-nav-link`} to={'/uni'}>
               UNI
             </StyledNavLink>
-            <StyledNavLink
-              id={`stake-nav-link`}
-              to={'/vote'}
-              isActive={() => history.location.pathname.includes('/vote')}
-            >
+            <StyledNavLink id={`stake-nav-link`} to={'/vote'}>
               Vote
             </StyledNavLink>
             <StyledExternalLink id={`stake-nav-link`} href={'https://uniswap.info'}>
@@ -363,26 +353,28 @@ function Header({ history }: { history: any }) {
                 <CardNoise />
               </UNIWrapper>
             )}
-            {!availableClaim && aggregateBalance && JSBI.greaterThan(aggregateBalance.raw, JSBI.BigInt(0)) && (
+            {!availableClaim && aggregateBalance && (
               <UNIWrapper onClick={() => setShowUniBalanceModal(true)}>
                 <UNIAmount active={!!account && !availableClaim} style={{ pointerEvents: 'auto' }}>
-                  <HideSmall>
-                    <TYPE.white
-                      style={{
-                        paddingRight: '.4rem'
-                      }}
-                    >
-                      <CountUp
-                        key={countUpValue}
-                        isCounting
-                        start={parseFloat(countUpValuePrevious)}
-                        end={parseFloat(countUpValue)}
-                        thousandsSeparator={','}
-                        duration={1}
-                      />
-                    </TYPE.white>
-                  </HideSmall>
-                  {'UNI'}
+                  {account && (
+                    <HideSmall>
+                      <TYPE.white
+                        style={{
+                          paddingRight: '.4rem'
+                        }}
+                      >
+                        <CountUp
+                          key={countUpValue}
+                          isCounting
+                          start={parseFloat(countUpValuePrevious)}
+                          end={parseFloat(countUpValue)}
+                          thousandsSeparator={','}
+                          duration={1}
+                        />
+                      </TYPE.white>
+                    </HideSmall>
+                  )}
+                  UNI
                 </UNIAmount>
                 <CardNoise />
               </UNIWrapper>
@@ -404,4 +396,3 @@ function Header({ history }: { history: any }) {
     </HeaderFrame>
   )
 }
-export default withRouter(Header)

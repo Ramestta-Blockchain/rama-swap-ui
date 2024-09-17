@@ -25,7 +25,7 @@ const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
   // 42: 'kovan.',
   // 80002: 'matic',
   1370: '',
-  1377: 'pingakhsha.'
+  1377: 'pingaksha.'
 }
 
 export function getEtherscanLink(
