@@ -16,7 +16,7 @@ import ReactMarkdown from 'react-markdown'
 import VoteModal from '../../components/vote/VoteModal'
 import { TokenAmount, JSBI } from '@uniswap/sdk'
 import { useActiveWeb3React } from '../../hooks'
-import { PROPOSAL_LENGTH_IN_DAYS, COMMON_CONTRACT_NAMES, UNI, ZERO_ADDRESS } from '../../constants'
+import { PROPOSAL_LENGTH_IN_SECS, COMMON_CONTRACT_NAMES, UNI, ZERO_ADDRESS } from '../../constants'
 import { isAddress, getEtherscanLink } from '../../utils'
 import { ApplicationModal } from '../../state/application/actions'
 import { useModalOpen, useToggleDelegateModal, useToggleVoteModal } from '../../state/application/hooks'
@@ -121,9 +121,7 @@ export default function VotePage({
   // get and format date from data
   const startTimestamp: number | undefined = useTimestampFromBlock(proposalData?.startBlock)
   const endDate: DateTime | undefined = startTimestamp
-    ? DateTime.fromSeconds(startTimestamp).plus({
-        days: PROPOSAL_LENGTH_IN_DAYS
-      })
+    ? DateTime.fromSeconds(startTimestamp).plus({ seconds: PROPOSAL_LENGTH_IN_SECS })
     : undefined
   const now: DateTime = DateTime.local()
 
@@ -145,7 +143,7 @@ export default function VotePage({
 
   const uniBalance: TokenAmount | undefined = useTokenBalance(account ?? undefined, chainId ? UNI[chainId] : undefined)
   const userDelegatee: string | undefined = useUserDelegatee()
-   // in blurb link to home page if they are able to unlock
+  // in blurb link to home page if they are able to unlock
   const showLinkForUnlock = Boolean(
     uniBalance && JSBI.notEqual(uniBalance.raw, JSBI.BigInt(0)) && userDelegatee === ZERO_ADDRESS
   )

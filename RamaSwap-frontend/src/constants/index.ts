@@ -18,7 +18,7 @@ type ChainTokenList = {
 // export const COMP = new Token(ChainId.MAINNET, '0xc00e94Cb662C3520282E6f5717214004A7f26888', 18, 'COMP', 'Compound')
 // export const MKR = new Token(ChainId.MAINNET, '0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2', 18, 'MKR', 'Maker')
 // export const AMPL = new Token(ChainId.MAINNET, '0xD46bA6D942050d489DBd938a2C909A5d5039A161', 9, 'AMPL', 'Ampleforth')
-export const DAI = new Token(ChainId.RAMA, '0x83cD7428ea4ebb7Dd2E5464b4B10eb0Df9EcC752', 18, 'DAI','Dai Stablecoin')
+export const DAI = new Token(ChainId.RAMA, '0x83cD7428ea4ebb7Dd2E5464b4B10eb0Df9EcC752', 18, 'DAI', 'Dai Stablecoin')
 export const USDT = new Token(ChainId.RAMA, '0x84e8F41F5442E6239698b87512081441829ba7ba', 18, 'USDT', 'Tether USD')
 // export const RMATIC = new Token(ChainId.RAMA, '0x02f0E898e3B7aF88511B620878C26adC5AAC6A5d', 18, 'RMATIC', 'Wrapped Matic on Ramestta')
 export const RBTC = new Token(ChainId.RAMA, '0x8D1213abFa53dC4e8CB11eFa4a8DC353EFecfB84', 8, 'RBTC', '(Ramestta PoS) Wrapped BTC ')
@@ -27,8 +27,10 @@ export const RETH = new Token(ChainId.RAMA, '0xbEcF35FbC068532d32A730F2fBA80230B
 // export const UNI = new Token(ChainId.RAMA, '0x6622C7799aa0Ac3717a3E77b14d65d65C2e73388', 18, 'UNI', '(Ramestta PoS) Uniswap (UNI)')
 // export const SHIB = new Token(ChainId.RAMA, '0x63B1f9a2A1104C7DC37ae3686AE2be5aBe4aa798', 18, 'SHIB', '(Ramestta PoS) SHIBA INU (SHIB)')
 
-// TODO this is only approximate, it's actually based on blocks
-export const PROPOSAL_LENGTH_IN_DAYS = 7
+// Block time here is slightly higher (~1s) than average in order to avoid ongoing proposals past the displayed time
+export const AVERAGE_BLOCK_TIME_IN_SECS = 14
+export const PROPOSAL_LENGTH_IN_BLOCKS = 40_320
+export const PROPOSAL_LENGTH_IN_SECS = AVERAGE_BLOCK_TIME_IN_SECS * PROPOSAL_LENGTH_IN_BLOCKS
 
 export const GOVERNANCE_ADDRESS = '0x5e4be8Bc9637f0EAA1A755019e06A68ce081D58F'
 
@@ -69,7 +71,7 @@ const WETH_ONLY: ChainTokenList = {
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ...WETH_ONLY,
   // [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, COMP, MKR],
-  [ChainId.RAMA]: [...WETH_ONLY[ChainId.RAMA], DAI, USDT,  RBTC, RETH]
+  [ChainId.RAMA]: [...WETH_ONLY[ChainId.RAMA], DAI, USDT, RBTC, RETH]
 }
 
 /**
@@ -83,7 +85,7 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
   [ChainId.RAMA]: {
     [USDT.address]: [DAI, WETH[ChainId.RAMA]]
   }
-  
+
 }
 
 // used for display in the default list when adding liquidity
