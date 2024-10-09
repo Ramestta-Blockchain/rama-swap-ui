@@ -30,7 +30,7 @@ export const RETH = new Token(ChainId.RAMA, '0xbEcF35FbC068532d32A730F2fBA80230B
 // export const SHIB = new Token(ChainId.RAMA, '0x63B1f9a2A1104C7DC37ae3686AE2be5aBe4aa798', 18, 'SHIB', '(Ramestta PoS) SHIBA INU (SHIB)')
 
 // Block time here is slightly higher (~1s) than average in order to avoid ongoing proposals past the displayed time
-export const AVERAGE_BLOCK_TIME_IN_SECS = 14
+export const AVERAGE_BLOCK_TIME_IN_SECS = 3
 export const PROPOSAL_LENGTH_IN_BLOCKS = 40_320
 export const PROPOSAL_LENGTH_IN_SECS = AVERAGE_BLOCK_TIME_IN_SECS * PROPOSAL_LENGTH_IN_BLOCKS
 
