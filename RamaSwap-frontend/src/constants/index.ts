@@ -7,6 +7,8 @@ export const ROUTER_ADDRESS = '0xAc27ec1de4E79014a56f8b69aE069DDB0bF9d265'
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
 
+export { PRELOADED_PROPOSALS } from './proposals'
+
 // a list of tokens by chain
 type ChainTokenList = {
   readonly [chainId in ChainId]: Token[]
