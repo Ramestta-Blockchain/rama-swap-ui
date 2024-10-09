@@ -88,7 +88,7 @@ describe('schema', () => {
     checkSchema(extensionsValid, true);
     checkSchema(extensionsInvalid, false);
   });
-  
+
   it('allows up to 10k tokens', () => {
     const exampleListWith10kTokens = {
       ...exampleList,
