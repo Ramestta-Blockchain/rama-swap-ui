@@ -101,7 +101,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ...WETH_ONLY,
   // [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT]
-  [ChainId.RAMA]: [...WETH_ONLY[ChainId.RAMA], DAI, USDT]
+  [ChainId.RAMA]: [...WETH_ONLY[ChainId.RAMA], DAI, USDT, RBTC]
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {

@@ -264,7 +264,7 @@ const Rowbetween = styled('div')`
     padding:0 0.7rem;
   `};
 `
-const StyledMenuButton = styled.button`
+export const StyledMenuButton = styled.button`
   position: relative;
   width: 100%;
   height: 100%;
@@ -409,7 +409,7 @@ export default function Header() {
             <AccountElement active={!!account} style={{ pointerEvents: 'auto' }}>
               {account && userEthBalance ? (
                 <BalanceText style={{ flexShrink: 0 }} pl="0.75rem" pr="0.5rem" fontWeight={500}>
-                  {userEthBalance?.toSignificant(4)} ETH
+                  {userEthBalance?.toSignificant(4)} RAMA
                 </BalanceText>
               ) : null}
               <Web3Status />
