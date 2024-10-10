@@ -24,7 +24,7 @@ import { CountUp } from 'use-count-up'
 import { TYPE, ExternalLink } from '../../theme'
 
 import { YellowCard } from '../Card'
-import Settings from '../Settings'
+import { Moon, Sun } from 'react-feather'
 
 import Row, { RowFixed } from '../Row'
 import Web3Status from '../Web3Status'
@@ -264,6 +264,32 @@ const Rowbetween = styled('div')`
     padding:0 0.7rem;
   `};
 `
+const StyledMenuButton = styled.button`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  height: 35px;
+  background-color: ${({ theme }) => theme.bg3};
+  margin-left: 8px;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.5rem;
+  :hover,
+  :focus {
+    cursor: pointer;
+    outline: none;
+    background-color: ${({ theme }) => theme.bg4};
+  }
+  svg {
+    margin-top: 2px;
+  }
+  > * {
+    stroke: ${({ theme }) => theme.text1};
+  }
+`
 
 const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.RAMA]: 'Ramestta',
@@ -275,7 +301,8 @@ export default function Header() {
   const { t } = useTranslation()
 
   const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
-  const [isDark] = useDarkModeManager()
+  // const [isDark] = useDarkModeManager()
+  const [darkMode, toggleDarkMode] = useDarkModeManager()
 
   const toggleClaimModal = useToggleSelfClaimModal()
 
@@ -303,7 +330,7 @@ export default function Header() {
             <UniIcon>
               <img
                 style={{ width: '40px', height: '40px', marginTop: '2px' }}
-                src={isDark ? LogoDark : Logo}
+                src={darkMode ? LogoDark : Logo}
                 alt="logo"
               />
             </UniIcon>
@@ -389,7 +416,9 @@ export default function Header() {
             </AccountElement>
           </HeaderElement>
           <HeaderElementWrap>
-            <Settings />
+            <StyledMenuButton onClick={() => toggleDarkMode()}>
+              {darkMode ? <Moon size={20} /> : <Sun size={20} />}
+            </StyledMenuButton>
           </HeaderElementWrap>
         </HeaderControls>
       </Rowbetween>

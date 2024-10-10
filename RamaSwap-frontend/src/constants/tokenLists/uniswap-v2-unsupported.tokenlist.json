@@ -1,0 +1,21 @@
+{
+  "name": "Ramestta",
+  "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/rama.png",
+  "keywords": ["ramestta", "layer2", "defi"],
+  "timestamp": "2024-06-06T15:22:00.000Z",
+  "tokens": [
+    {
+      "chainId": 1370,
+      "address": "0xbEcF35FbC068532d32A730F2fBA80230B05348E6",
+      "name": "Wrapped ETH",
+      "symbol": "RETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/eth.webp"
+    }
+  ],
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  }
+}

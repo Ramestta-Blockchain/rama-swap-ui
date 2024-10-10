@@ -1,0 +1,93 @@
+{
+  "name": "Ramestta",
+  "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/rama.png",
+  "keywords": ["ramestta", "layer2", "defi"],
+  "timestamp": "2024-06-06T15:22:00.000Z",
+  "tokens": [
+    {
+      "chainId": 1370,
+      "address": "0x84e8F41F5442E6239698b87512081441829ba7ba",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/usdt.webp"
+    },
+    {
+      "chainId": 1370,
+      "address": "0x83cD7428ea4ebb7Dd2E5464b4B10eb0Df9EcC752",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/dai.svg"
+    },
+    {
+      "chainId": 1370,
+      "address": "0x8D1213abFa53dC4e8CB11eFa4a8DC353EFecfB84",
+      "name": "Wrapped BTC",
+      "symbol": "RBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/wbtc.webp"
+    },
+    {
+      "chainId": 1370,
+      "address": "0x6622C7799aa0Ac3717a3E77b14d65d65C2e73388",
+      "name": "Uniswap",
+      "symbol": "UNI",
+      "decimals": 18,
+      "logoURI": "ipfs://QmXttGpZrECX5qCyXbBQiqgQNytVGeZW5Anewvh2jc4psg"
+    },
+    {
+      "chainId": 1370,
+      "address": "0x63B1f9a2A1104C7DC37ae3686AE2be5aBe4aa798",
+      "name": "SHIBA INU",
+      "symbol": "SHIB",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/shiba.webp"
+    },
+    {
+      "chainId": 1370,
+      "address": "0x30940e7240a8cE60cb4b38ce7fBA7D88e5bCCe46",
+      "name": "Aave",
+      "symbol": "AAVE",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/aave.webp"
+    },
+    {
+      "chainId": 1370,
+      "address": "0xbEcF35FbC068532d32A730F2fBA80230B05348E6",
+      "name": "Wrapped ETH",
+      "symbol": "RETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/eth.webp"
+    },
+    {
+      "chainId": 1370,
+      "address": "0x6C9C4c86a334a027C179f158354790f32574cf1C",
+      "name": "Wrapped RAMA",
+      "symbol": "WRAMA",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/rama.png"
+    },
+    {
+      "chainId": 1370,
+      "address": "0x02f0E898e3B7aF88511B620878C26adC5AAC6A5d",
+      "name": "Wrapped Matic",
+      "symbol": "RMATIC",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/polygon.webp"
+    },
+    {
+      "chainId": 1370,
+      "address": "0x4b1853C1882ee5c50e5Cb3d7ff05334047AC66Bd",
+      "name": "Mumble Chat",
+      "symbol": "MMCT",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/icons/mmct.svg"
+    }
+  ],
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  }
+}
