@@ -23,6 +23,7 @@ import { useAllLists } from 'state/lists/hooks'
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  overflow: auto;
 `
 interface ImportProps {
   listURL: string
