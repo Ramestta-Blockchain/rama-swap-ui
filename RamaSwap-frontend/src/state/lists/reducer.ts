@@ -47,8 +47,8 @@ export default createReducer(initialState, builder =>
   builder
     .addCase(fetchTokenList.pending, (state, { payload: { requestId, url } }) => {
       state.byUrl[url] = {
-        current: null,
-        pendingUpdate: null,
+        // current: null,
+        // pendingUpdate: null,
         ...state.byUrl[url],
         loadingRequestId: requestId,
         error: null
@@ -72,6 +72,11 @@ export default createReducer(initialState, builder =>
           }
         }
       } else {
+        // activate if on default active
+        if (DEFAULT_ACTIVE_LIST_URLS.includes(url)) {
+          state.activeListUrls?.push(url)
+        }
+
         state.byUrl[url] = {
           ...state.byUrl[url],
           loadingRequestId: null,
