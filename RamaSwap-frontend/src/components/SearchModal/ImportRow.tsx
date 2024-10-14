@@ -20,7 +20,7 @@ const TokenSection = styled.div<{ dim?: boolean }>`
   grid-template-columns: auto minmax(auto, 1fr) auto;
   grid-gap: 16px;
   align-items: center;
-  opacity: ${({ dim }) => (dim ? '0.6' : '1')};
+  opacity: ${({ dim }) => (dim ? '0.4' : '1')};
 `
 const CheckIcon = styled(CheckCircle)`
   height: 16px;
@@ -96,7 +96,6 @@ export default function ImportRow({
           <TYPE.main color={theme.green1}>Active</TYPE.main>
         </RowFixed>
       )}
-      {/* </RowBetween> */}
     </TokenSection>
   )
 }
