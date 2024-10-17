@@ -5,7 +5,7 @@
 /**
  * @TODO add list from blockchain association
  */
-export const UNSUPPORTED_LIST_URLS: string[] = []
+
 const COMPOUND_LIST = 'https://raw.githubusercontent.com/compound-finance/token-list/master/compound.tokenlist.json'
 const UMA_LIST = 'https://umaproject.org/uma.tokenlist.json'
 const AAVE_LIST = 'tokenlist.aave.eth'
@@ -19,8 +19,10 @@ const CMC_ALL_LIST = 'defi.cmc.eth'
 const CMC_STABLECOIN = 'stablecoin.cmc.eth'
 const KLEROS_LIST = 't2crtokens.eth'
 
-// lower index == higher priority for token import
+const BA_LIST = 'https://raw.githubusercontent.com/The-Blockchain-Association/sec-notice-list/master/ba-sec-list.json'
+export const UNSUPPORTED_LIST_URLS: string[] = [BA_LIST]
 
+// lower index == higher priority for token import
 export const DEFAULT_LIST_OF_LISTS: string[] = [
   // DEFAULT_TOKEN_LIST_URL,
   'https://raw.githubusercontent.com/Ramestta-Blockchain/rama-swap-ui/stage/ramestta.tokenlist.json',

@@ -100,7 +100,7 @@ export function useUserSingleHopOnly(): [boolean, (newSingleHopOnly: boolean) =>
     },
     [dispatch]
   )
-  
+
   return [singleHopOnly, setSingleHopOnly]
 }
 
@@ -162,7 +162,7 @@ export function useUserAddedTokens(): Token[] {
 
   return useMemo(() => {
     if (!chainId) return []
-    return Object.values(serializedTokensMap[chainId as ChainId] ?? {}).map(deserializeToken)
+    return Object.values(serializedTokensMap?.[chainId as ChainId] ?? {}).map(deserializeToken)
   }, [serializedTokensMap, chainId])
 }
 
