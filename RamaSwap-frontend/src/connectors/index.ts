@@ -10,6 +10,7 @@ import { NetworkConnector } from './NetworkConnector'
 const NETWORK_URL = process.env.REACT_APP_NETWORK_URL
 const FORMATIC_KEY = process.env.REACT_APP_FORTMATIC_KEY
 const PORTIS_ID = process.env.REACT_APP_PORTIS_ID
+const WALLETCONNECT_BRIDGE_URL = process.env.REACT_APP_WALLETCONNECT_BRIDGE_URL
 
 export const NETWORK_CHAIN_ID: number = parseInt(process.env.REACT_APP_CHAIN_ID ?? '1')
 
@@ -33,7 +34,7 @@ export const injected = new InjectedConnector({
 // mainnet only
 export const walletconnect = new WalletConnectConnector({
   rpc: { 1: NETWORK_URL },
-  bridge: 'https://bridge.walletconnect.org',
+  bridge: WALLETCONNECT_BRIDGE_URL,
   qrcode: true,
   pollingInterval: 15000
 })
