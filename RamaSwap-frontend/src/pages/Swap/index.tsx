@@ -48,8 +48,9 @@ import Loader from '../../components/Loader'
 import { useIsTransactionUnsupported } from 'hooks/Trades'
 import UnsupportedCurrencyFooter from 'components/swap/UnsupportedCurrencyFooter'
 import { isTradeBetter } from 'utils/trades'
+import { RouteComponentProps } from 'react-router-dom'
 
-export default function Swap() {
+export default function Swap({ history }: RouteComponentProps) {
   const loadedUrlParams = useDefaultsFromURLSearch()
 
   // token warning stuff
@@ -66,7 +67,7 @@ export default function Swap() {
     setDismissTokenWarning(true)
   }, [])
 
-   // dismiss warning if all imported tokens are in active lists
+  // dismiss warning if all imported tokens are in active lists
   const defaultTokens = useAllTokens()
 
   const importTokensNotInDefault =
@@ -74,7 +75,7 @@ export default function Swap() {
     urlLoadedTokens.filter((token: Token) => {
       return !Boolean(token.address in defaultTokens)
     })
-    
+
   const { account } = useActiveWeb3React()
   const theme = useContext(ThemeContext)
 
@@ -143,6 +144,12 @@ export default function Swap() {
     [onUserInput]
   )
 
+  // reset if they close warning without tokens in params
+  const handleDismissTokenWarning = useCallback(() => {
+    setDismissTokenWarning(true)
+    history.push('/swap/')
+  }, [history])
+
   // modal and loading
   const [{ showConfirm, tradeToConfirm, swapErrorMessage, attemptingTxn, txHash }, setSwapState] = useState<{
     showConfirm: boolean
@@ -201,10 +208,22 @@ export default function Swap() {
     if (!swapCallback) {
       return
     }
-    setSwapState({ attemptingTxn: true, tradeToConfirm, showConfirm, swapErrorMessage: undefined, txHash: undefined })
+    setSwapState({
+      attemptingTxn: true,
+      tradeToConfirm,
+      showConfirm,
+      swapErrorMessage: undefined,
+      txHash: undefined
+    })
     swapCallback()
       .then(hash => {
-        setSwapState({ attemptingTxn: false, tradeToConfirm, showConfirm, swapErrorMessage: undefined, txHash: hash })
+        setSwapState({
+          attemptingTxn: false,
+          tradeToConfirm,
+          showConfirm,
+          swapErrorMessage: undefined,
+          txHash: hash
+        })
 
         ReactGA.event({
           category: 'Swap',
@@ -263,7 +282,13 @@ export default function Swap() {
     !(priceImpactSeverity > 3 && !isExpertMode)
 
   const handleConfirmDismiss = useCallback(() => {
-    setSwapState({ showConfirm: false, tradeToConfirm, attemptingTxn, swapErrorMessage, txHash })
+    setSwapState({
+      showConfirm: false,
+      tradeToConfirm,
+      attemptingTxn,
+      swapErrorMessage,
+      txHash
+    })
     // if there was a tx hash, we want to clear the input
     if (txHash) {
       onUserInput(Field.INPUT, '')
@@ -271,7 +296,13 @@ export default function Swap() {
   }, [attemptingTxn, onUserInput, swapErrorMessage, tradeToConfirm, txHash])
 
   const handleAcceptChanges = useCallback(() => {
-    setSwapState({ tradeToConfirm: trade, swapErrorMessage, txHash, attemptingTxn, showConfirm })
+    setSwapState({
+      tradeToConfirm: trade,
+      swapErrorMessage,
+      txHash,
+      attemptingTxn,
+      showConfirm
+    })
   }, [attemptingTxn, showConfirm, swapErrorMessage, trade, txHash])
 
   const handleInputSelect = useCallback(
@@ -298,6 +329,7 @@ export default function Swap() {
         isOpen={importTokensNotInDefault.length > 0 && !dismissTokenWarning}
         tokens={importTokensNotInDefault}
         onConfirm={handleConfirmTokenWarning}
+        onDismiss={handleDismissTokenWarning}
       />
       <SwapPoolTabs active={'swap'} />
       <AppBody>
