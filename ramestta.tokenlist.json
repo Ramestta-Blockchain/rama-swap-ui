@@ -34,7 +34,7 @@
       "name": "Uniswap",
       "symbol": "UNI",
       "decimals": 18,
-      "logoURI": "ipfs://QmXttGpZrECX5qCyXbBQiqgQNytVGeZW5Anewvh2jc4psg"
+      "logoURI": "https://raw.githubusercontent.com/Uniswap/brand-assets/refs/heads/main/Uniswap%20Brand%20Assets/Uniswap_icon_pink.svg"
     },
     {
       "chainId": 1370,
